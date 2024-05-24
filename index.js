@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const ENV = require('dotenv').config();
 const BookRoutes = require('./routes/bookRoutes');
-
+const AuthorRoutes = require('./routes/authorRoutes');
 const books = require('./bookData');
 const Book = require('./models/bookModel');
 
@@ -19,3 +19,4 @@ mongoose.connect(process.env.DB_URI).then(() => {
 });
 
 app.use('/books', BookRoutes);
+app.use('/authors', AuthorRoutes);
